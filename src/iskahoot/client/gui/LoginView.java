@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class LoginView extends JPanel {
 	private View view;
@@ -21,7 +22,7 @@ public class LoginView extends JPanel {
 		this.view = view;
 		
 		setLayout(new BorderLayout(20,20));
-		this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); //espaçamento entre os componentes
+		this.setBorder(new EmptyBorder(10, 10, 10, 10)); //espaçamento entre os componentes
 		
 		JLabel title = new JLabel("Bem-vindo ao 	IsKahoot!", SwingConstants.CENTER); //a ultima parte é para o texto ficar centrado
 		add(title, BorderLayout.NORTH);

@@ -1,5 +1,5 @@
 package iskahoot.server.coordination;
 
-public class Semaforo {
+public class ModifiedCountdownLatch {
 
 }
