@@ -14,8 +14,7 @@ public class GameState {
     private final List<Question> questions;
 
     private GamePhase currentePhase;
-    private int currentQuestionInt = -1;
-
+  
     private Map<String, PlayerThread> players;
     private Map<String, String> teams;
 
