@@ -64,10 +64,7 @@ public class QuestionView extends JPanel implements ActionListener {
 		}
 	}
 
-
-
-
-
+	
 	// desativar botoes quando se responde
 	private void setAnswersEnable(boolean isEnable) {
 		for(JButton button : answers)

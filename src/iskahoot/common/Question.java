@@ -18,7 +18,7 @@ public class Question {
     public int getCorrect() {
         return correct;
     }
-    public List<String> getAnswers() {
+    public List<String> getOptions() {
         return options;
     }
 

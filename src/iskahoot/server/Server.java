@@ -1,5 +1,33 @@
 package iskahoot.server;
 
+import iskahoot.common.Question;
+import iskahoot.common.Quiz;
+
 public class Server {
 
+    public static void main(String[] args) {
+        
+        System.out.println("--- A testar o QuizLoader ---");
+
+        Quiz quiz = QuizLoader.loadQuizFromFile("data/quizzes.json");
+        
+        if (quiz != null && quiz.getQuestions() != null) {
+            
+            System.out.println("SUCESSO: Quiz '" + quiz.getName() + "' carregado.");
+            System.out.println("Total de perguntas: " + quiz.getQuestions().size());
+            System.out.println("--------------------------------------");
+
+            for (Question q : quiz.getQuestions()) {
+                System.out.println("Pergunta: " + q.getQuestion());
+                System.out.println("  Opções: " + q.getOptions());
+                System.out.println("  Correta (índice): " + q.getCorrect());
+                System.out.println("  Pontos: " + q.getPoints());
+                System.out.println();
+            }
+            
+        } else {
+            System.err.println("ERRO: O QuizLoader falhou.");
+            System.err.println("Verifica se o caminho 'data/quizzes.json' está correto e se o JSON foi bem formatado.");
+        }
+    }
 }

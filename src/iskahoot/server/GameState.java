@@ -1,5 +1,6 @@
 package iskahoot.server;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -27,8 +28,8 @@ public class GameState {
 
         this.currentePhase = GamePhase.WAITING_FOR_PLAYERS;
 
-        this.players = new ConcurrentHashMap<>();
-        this.teams = new ConcurrentHashMap<>();
+        this.players = new HashMap<>();
+        this.teams = new HashMap<>();
 
     }
 
