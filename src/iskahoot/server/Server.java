@@ -13,7 +13,7 @@ public class Server {
         
         if (quiz != null && quiz.getQuestions() != null) {
             
-            System.out.println("SUCESSO: Quiz '" + quiz.getName() + "' carregado.");
+            System.out.println("Quiz '" + quiz.getName() + "' carregado.");
             System.out.println("Total de perguntas: " + quiz.getQuestions().size());
             System.out.println("--------------------------------------");
 
