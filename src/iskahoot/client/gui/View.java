@@ -1,50 +1,61 @@
 package iskahoot.client.gui;
 
-import java.awt.CardLayout;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
+import java.awt.*;
 
 public class View extends JFrame {
-	
-	public static final String VIEW_LOGIN = "LOGIN";
-	public static final String VIEW_QUESTION = "QUESTION";
-	public static final String VIEW_RANKING = "RANKING";
-	
-	private JPanel panel;
-	private CardLayout layout;
-	
-	private LoginView loginView;
-	private QuestionView questionView;
-	private RankingView rankingView;
-	
-	
-	public View() {
-		setTitle("IsKahoot");
-		
-		setSize(700, 500);
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
-		layout = new CardLayout();
-		panel = new JPanel(layout);
-		
-		loginView = new LoginView(this);
-		questionView = new QuestionView(this);
-		rankingView = new RankingView(this);
-
-		panel.add(loginView, VIEW_LOGIN);
-		panel.add(questionView, VIEW_QUESTION);
-		panel.add(rankingView, VIEW_RANKING);
-		
-		this.add(panel);
-		
-		showView(VIEW_LOGIN);
-	}
-	
-	
-	public void showView(String viewName) {
-        layout.show(panel, viewName);
+    private CardLayout cardLayout;
+    private JPanel mainPanel;
+    
+    // Apenas as vistas necessárias para o jogo
+    private QuestionView questionView;
+    private RankingView rankingView;
+    
+    public View() {
+        initializeComponents();
+        setupLayout();
+        setupWindow();
     }
+    
+    private void initializeComponents() {
+        cardLayout = new CardLayout();
+        mainPanel = new JPanel(cardLayout);
+        
+        questionView = new QuestionView();
+        rankingView = new RankingView();
+        
+        // Adicionar vistas ao CardLayout
+        mainPanel.add(questionView, "QUESTION");
+        mainPanel.add(rankingView, "RANKING");
+    }
+    
+    private void setupLayout() {
+        setLayout(new BorderLayout());
+        add(mainPanel, BorderLayout.CENTER);
+    }
+    
+    private void setupWindow() {
+        setTitle("Kahoot Cliente");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
+        showQuestionView();
+    }
+    
+    public void showQuestionView() {
+        cardLayout.show(mainPanel, "QUESTION");
+    }
+    
+    public void showRankingView() {
+        cardLayout.show(mainPanel, "RANKING");
+    }
+    
+    public QuestionView getQuestionView() {
+        return questionView;
+    }
+    
+    public RankingView getRankingView() {
+        return rankingView;
+    }
 }

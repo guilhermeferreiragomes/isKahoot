@@ -11,12 +11,10 @@ import javax.swing.border.EmptyBorder;
 
 public class RankingView extends JPanel {
 	
-	private View view;
 	private JLabel title;
 	private JTextArea rankings;
 
-	public RankingView(View view) {
-		this.view = view;
+	public RankingView() {
 
 		this.setLayout(new BorderLayout(10, 10));
 		this.setBorder(new EmptyBorder(10, 200, 10, 200));

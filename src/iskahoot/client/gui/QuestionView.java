@@ -13,15 +13,13 @@ import javax.swing.border.EmptyBorder;
 
 public class QuestionView extends JPanel implements ActionListener {
 	
-	private View view;
 	private JLabel timer;
 	private JLabel question;
 	private JButton[] answers = new JButton[4];
 	private JButton temporario;
 	
 	
-	public QuestionView(View view) {
-		this.view = view;
+	public QuestionView() {
 		setLayout(new BorderLayout(10, 10));
 		this.setBorder(new EmptyBorder(10,10,10,10));
 
@@ -53,7 +51,6 @@ public class QuestionView extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		//TEMPORARIO
 		if(e.getSource() == temporario) {
-			goToRankings();
 			return;
 		}
 		for(int i = 0; i < answers.length; i++) {
@@ -71,8 +68,5 @@ public class QuestionView extends JPanel implements ActionListener {
 			button.setEnabled(isEnable);
 	}
 
-	//  TEMPORARIO
-	private void goToRankings() {
-		view.showView(View.VIEW_RANKING);
-	}
+
 }
