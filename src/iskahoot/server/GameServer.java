@@ -1,9 +1,9 @@
 package iskahoot.server;
 
-import iskahoot.common.Question;
-import iskahoot.common.Quiz;
+import iskahoot.game.Question;
+import iskahoot.game.Quiz;
 
-public class Server {
+public class GameServer {
 
     public static void main(String[] args) {
         
@@ -20,7 +20,7 @@ public class Server {
             for (Question q : quiz.getQuestions()) {
                 System.out.println("Pergunta: " + q.getQuestion());
                 System.out.println("  Opções: " + q.getOptions());
-                System.out.println("  Correta (índice): " + q.getCorrect());
+                System.out.println("  Correta (índice): " + q.getCorrectAnswer());
                 System.out.println("  Pontos: " + q.getPoints());
                 System.out.println();
             }

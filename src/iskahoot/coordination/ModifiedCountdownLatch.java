@@ -1,4 +1,4 @@
-package iskahoot.server.coordination;
+package iskahoot.coordination;
 
 public class ModifiedCountdownLatch {
 

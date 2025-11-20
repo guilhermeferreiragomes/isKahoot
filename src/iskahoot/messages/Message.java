@@ -1,4 +1,4 @@
-package iskahoot.common;
+package iskahoot.messages;
 
 public class Message {
 
