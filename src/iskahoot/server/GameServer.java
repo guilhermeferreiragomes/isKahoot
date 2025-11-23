@@ -27,7 +27,6 @@ public class GameServer {
             
         } else {
             System.err.println("ERRO: O QuizLoader falhou.");
-            System.err.println("Verifica se o caminho 'data/quizzes.json' está correto e se o JSON foi bem formatado.");
         }
     }
 }
