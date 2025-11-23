@@ -20,7 +20,7 @@ public class GameServer {
             for (Question q : quiz.getQuestions()) {
                 System.out.println("Pergunta: " + q.getQuestion());
                 System.out.println("  Opções: " + q.getOptions());
-                System.out.println("  Correta (índice): " + q.getCorrectAnswer());
+                System.out.println("  Correta (índice): " + q.getCorrect());
                 System.out.println("  Pontos: " + q.getPoints());
                 System.out.println();
             }

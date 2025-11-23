@@ -5,13 +5,13 @@ import java.util.List;
 public class Question {
     private String question;
     private List<String> options;
-    private int correctAnswer;
+    private int correct;
     private int points;
 
-    public Question(String question, List<String> options, int correctAnswer, int points) {
+    public Question(String question, List<String> options, int correct, int points) {
         this.question = question;
         this.options = options;
-        this.correctAnswer = correctAnswer;
+        this.correct = correct;
         this.points = points;
     }
 
@@ -24,8 +24,8 @@ public class Question {
         return options;
     }
 
-    public int getCorrectAnswer() {
-        return correctAnswer;
+    public int getCorrect() { 
+        return correct;
     }
 
     public int getPoints() {
@@ -41,8 +41,8 @@ public class Question {
         this.options = options;
     }
 
-    public void setCorrectAnswer(int correctAnswer) {
-        this.correctAnswer = correctAnswer;
+    public void setCorrect(int correct) {
+        this.correct = correct;
     }
 
     public void setPoints(int points) {
