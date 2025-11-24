@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch GameServer",
+            "request": "launch",
+            "mainClass": "iskahoot.server.GameServer",
+            "projectName": "Projeto_isKahoot"
+        },
+        {
+            "type": "java",
+            "name": "Launch Client with Args",
+            "request": "launch",
+            "mainClass": "iskahoot.client.Client",
+            "projectName": "Projeto_isKahoot",
+            "args": ["localhost", "8080", "PCD-1", "Team1", "Ana"]
+        }
+    ]
+}

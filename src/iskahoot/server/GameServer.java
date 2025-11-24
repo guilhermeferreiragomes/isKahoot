@@ -17,10 +17,10 @@ public class GameServer {
             System.out.println("Total de perguntas: " + quiz.getQuestions().size());
             
             try {
-                System.out.println("🚀 A iniciar o servidor...");
+                System.out.println("A iniciar o servidor...");
                 new GameServer().startServing();
             } catch (IOException e) {
-                System.err.println("❌ Erro a iniciar o servidor: " + e.getMessage());
+                System.err.println("Erro a iniciar o servidor: " + e.getMessage());
             }
             
         } else {
@@ -30,12 +30,12 @@ public class GameServer {
 
     public void startServing() throws IOException {
         ServerSocket ss = new ServerSocket(PORT);
-        System.out.println("✅ Servidor pronto na porta " + PORT);
+        System.out.println("Servidor pronto na porta " + PORT);
         
         try {
             while (true) {
                 Socket clientSocket = ss.accept();
-                System.out.println("🔌 Nova conexão recebida!");
+                System.out.println("Nova conexão recebida!");
                 
                 PlayerThread playerThread = new PlayerThread(clientSocket);
                 playerThread.start();
